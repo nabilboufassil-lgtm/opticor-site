@@ -1084,31 +1084,40 @@
     </div>
 
     <!-- Form -->
-    <div id="booking-form">
+    <form id="booking-form"
+          action="https://formsubmit.co/optiscor@gmail.com"
+          method="POST">
+
+      <!-- FormSubmit hidden config -->
+      <input type="hidden" name="_subject" value="New Discovery Call Lead - Optiscor">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://calendly.com/optiscor/30min">
+      <input type="hidden" name="_template" value="table">
+
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
         <div>
           <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">First Name</label>
-          <input id="f-firstname" type="text" placeholder="First Name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <input name="First Name" type="text" placeholder="First Name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
         </div>
         <div>
           <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Last Name</label>
-          <input id="f-lastname" type="text" placeholder="Last Name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <input name="Last Name" type="text" placeholder="Last Name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
         </div>
       </div>
 
       <div style="margin-bottom:0.75rem;">
         <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Phone / WhatsApp *</label>
-        <input id="f-phone" type="tel" placeholder="+1 234 567 8900" required style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <input name="Phone WhatsApp" type="tel" placeholder="+1 234 567 8900" required style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
       </div>
 
       <div style="margin-bottom:0.75rem;">
         <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Email *</label>
-        <input id="f-email" type="email" placeholder="you@example.com" required style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <input name="email" type="email" placeholder="you@example.com" required style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
       </div>
 
       <div style="margin-bottom:0.75rem;">
         <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">What Do You Do</label>
-        <select id="f-role" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; appearance:none; cursor:pointer; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <select name="What Do You Do" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; appearance:none; cursor:pointer; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
           <option value="" style="background:#12120f;">Select...</option>
           <option value="Coach / Consultant" style="background:#12120f;">Coach / Consultant</option>
           <option value="Agency Owner" style="background:#12120f;">Agency Owner</option>
@@ -1121,35 +1130,26 @@
 
       <div style="margin-bottom:0.75rem;">
         <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Current Monthly Revenue</label>
-        <select id="f-revenue" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; appearance:none; cursor:pointer; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+        <select name="Monthly Revenue" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; appearance:none; cursor:pointer; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
           <option value="" style="background:#12120f;">Select...</option>
-          <option value="$0 - $1k" style="background:#12120f;">$0 - $1,000</option>
-          <option value="$1k - $5k" style="background:#12120f;">$1,000 - $5,000</option>
-          <option value="$5k - $10k" style="background:#12120f;">$5,000 - $10,000</option>
-          <option value="$10k - $30k" style="background:#12120f;">$10,000 - $30,000</option>
-          <option value="$30k+" style="background:#12120f;">$30,000+</option>
+          <option value="$0 - $1,000" style="background:#12120f;">$0 - $1,000</option>
+          <option value="$1,000 - $5,000" style="background:#12120f;">$1,000 - $5,000</option>
+          <option value="$5,000 - $10,000" style="background:#12120f;">$5,000 - $10,000</option>
+          <option value="$10,000 - $30,000" style="background:#12120f;">$10,000 - $30,000</option>
+          <option value="$30,000+" style="background:#12120f;">$30,000+</option>
         </select>
       </div>
 
       <div style="margin-bottom:1.5rem;">
         <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Biggest Challenge Right Now</label>
-        <textarea id="f-challenge" rows="3" placeholder="Describe your main challenge..." style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; resize:vertical; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+        <textarea name="Biggest Challenge" rows="3" placeholder="Describe your main challenge..." style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; resize:vertical; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
       </div>
 
-      <div id="form-error" style="display:none; color:#e24b4a; font-size:0.82rem; margin-bottom:0.75rem; padding:0.6rem 0.9rem; background:rgba(226,75,74,0.08); border-radius:6px; border:1px solid rgba(226,75,74,0.2);"></div>
-
-      <button onclick="submitForm()" style="width:100%; background:#c8f542; color:#0a0a09; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.95rem; padding:0.9rem 1.5rem; border:none; border-radius:8px; cursor:pointer; transition:background 0.2s; letter-spacing:0.01em;">
+      <button type="submit" style="width:100%; background:#c8f542; color:#0a0a09; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.95rem; padding:0.9rem 1.5rem; border:none; border-radius:8px; cursor:pointer; transition:background 0.2s; letter-spacing:0.01em;">
         Book My Discovery Call →
       </button>
       <p style="text-align:center; font-size:0.75rem; color:rgba(245,243,238,0.25); margin-top:0.75rem;">100% free. No commitment.</p>
-    </div>
-
-    <!-- Success State -->
-    <div id="form-success" style="display:none; text-align:center; padding:1.5rem 0;">
-      <div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>
-      <h3 style="font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:800; color:#c8f542; margin-bottom:0.5rem;">You're booked in!</h3>
-      <p style="font-size:0.9rem; color:rgba(245,243,238,0.5); font-weight:300; line-height:1.7;">We've received your request and will reach out to you shortly at your email or WhatsApp to confirm the call.</p>
-    </div>
+    </form>
 
   </div>
 </div>
@@ -1168,53 +1168,6 @@
   }
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  function submitForm() {
-    const firstname = document.getElementById('f-firstname').value.trim();
-    const lastname  = document.getElementById('f-lastname').value.trim();
-    const phone     = document.getElementById('f-phone').value.trim();
-    const email     = document.getElementById('f-email').value.trim();
-    const role      = document.getElementById('f-role').value;
-    const revenue   = document.getElementById('f-revenue').value;
-    const challenge = document.getElementById('f-challenge').value.trim();
-    const errorBox  = document.getElementById('form-error');
-
-    errorBox.style.display = 'none';
-
-    if (!phone || !email) {
-      errorBox.textContent = 'Please fill in your Phone/WhatsApp and Email — they are required.';
-      errorBox.style.display = 'block';
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errorBox.textContent = 'Please enter a valid email address.';
-      errorBox.style.display = 'block';
-      return;
-    }
-
-    const subject = encodeURIComponent('New Discovery Call Request — Optiscor');
-    const body = encodeURIComponent(
-`New booking request from your website:
-
-Name: ${firstname} ${lastname}
-Phone / WhatsApp: ${phone}
-Email: ${email}
-What they do: ${role || 'Not specified'}
-Monthly Revenue: ${revenue || 'Not specified'}
-Biggest Challenge: ${challenge || 'Not specified'}
-
----
-Sent from optiscor.com`
-    );
-
-    window.location.href = `mailto:optiscor@gmail.com?subject=${subject}&body=${body}`;
-
-    setTimeout(() => {
-      document.getElementById('booking-form').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    }, 800);
-  }
 
   function toggleFaq(el) {
     const isOpen = el.classList.contains('open');
