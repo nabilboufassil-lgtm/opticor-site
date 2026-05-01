@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optiscor | Predictable Client Acquisition Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a09;
+    --white: #f5f3ee;
+    --off-white: #ece9e2;
+    --accent: #c8f542;
+    --accent-dark: #a8d428;
+    --mid: #1c1c1a;
+    --muted: #6b6b66;
+    --border: rgba(255,255,255,0.08);
+    --border-light: rgba(10,10,9,0.1);
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: var(--white);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(10,10,9,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(245,243,238,0.6);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--accent) !important;
+    color: var(--black) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent-dark) !important; }
+
+  /* SECTIONS */
+  section { padding: 7rem 4rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.06;
+    filter: blur(80px);
+  }
+
+  .hero-circle-1 { width: 600px; height: 600px; top: -150px; right: -100px; }
+  .hero-circle-2 { width: 300px; height: 300px; bottom: 0; left: 10%; opacity: 0.04; }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(200,245,66,0.25);
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 .highlight { color: var(--accent); }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(245,243,238,0.55);
+    max-width: 520px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: var(--black);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(245,243,238,0.6);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.85rem 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--white); }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    padding-top: 2.5rem;
+  }
+
+  .stat-item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(245,243,238,0.45);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+
+  /* PROBLEM SECTION */
+  #problem {
+    background: var(--mid);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+  }
+
+  .problem-col {
+    background: var(--black);
+    padding: 2.5rem;
+  }
+
+  .problem-col:first-child { border-radius: 12px 0 0 12px; }
+  .problem-col:last-child { border-radius: 0 12px 12px 0; }
+
+  .problem-col h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: rgba(245,243,238,0.4);
+  }
+
+  .check-list, .cross-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .check-list li, .cross-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: rgba(245,243,238,0.7);
+  }
+
+  .check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  .cross-list li::before {
+    content: '✕';
+    color: #e24b4a;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  /* SOLUTION */
+  .section-intro {
+    max-width: 600px;
+    margin-bottom: 4rem;
+  }
+
+  .section-intro p {
+    color: rgba(245,243,238,0.55);
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-top: 0.75rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--mid);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+    position: relative;
+  }
+
+  .service-card:hover { background: #232320; }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(200,245,66,0.1);
+    border: 1px solid rgba(200,245,66,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 18px;
+  }
+
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--white);
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: rgba(245,243,238,0.45);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* WHY US */
+  #why {
+    background: var(--mid);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .why-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem;
+    background: var(--black);
+    transition: border-color 0.2s;
+  }
+
+  .why-card:hover { border-color: rgba(200,245,66,0.2); }
+
+  .why-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .why-card p {
+    font-size: 0.9rem;
+    color: rgba(245,243,238,0.45);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 4rem;
+  }
+
+  .metric {
+    background: var(--black);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .metric-num {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .metric-label {
+    font-size: 0.82rem;
+    color: rgba(245,243,238,0.4);
+    font-weight: 400;
+  }
+
+  /* PROCESS */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .process-line {
+    position: absolute;
+    top: 2rem;
+    left: calc(12.5% + 1rem);
+    right: calc(12.5% + 1rem);
+    height: 1px;
+    background: linear-gradient(to right, var(--accent) 0%, rgba(200,245,66,0.15) 100%);
+    z-index: 0;
+  }
+
+  .process-step {
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num-wrap {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: var(--black);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .process-step:first-child .step-num-wrap {
+    border-color: var(--accent);
+    background: rgba(200,245,66,0.08);
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: rgba(245,243,238,0.3);
+  }
+
+  .process-step:first-child .step-num { color: var(--accent); }
+
+  .process-step h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .process-step p {
+    font-size: 0.86rem;
+    color: rgba(245,243,238,0.4);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* FOR YOU */
+  #foryou { background: var(--mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  .foryou-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .foryou-card {
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  .foryou-card.yes { background: rgba(200,245,66,0.05); border: 1px solid rgba(200,245,66,0.15); }
+  .foryou-card.no { background: rgba(226,75,74,0.05); border: 1px solid rgba(226,75,74,0.15); }
+
+  .foryou-card h3 {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .foryou-card.yes h3 { color: var(--accent); }
+  .foryou-card.no h3 { color: #e24b4a; }
+
+  .foryou-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .foryou-card.yes ul li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+  .foryou-card.no ul li::before { content: '✕ '; color: #e24b4a; font-weight: 700; }
+
+  .foryou-card li {
+    font-size: 0.9rem;
+    color: rgba(245,243,238,0.65);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* FAQ */
+  .faq-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1.75rem 0;
+    cursor: pointer;
+  }
+
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .faq-q span {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    color: rgba(245,243,238,0.4);
+    transition: all 0.2s;
+  }
+
+  .faq-item.open .faq-icon {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: rotate(45deg);
+  }
+
+  .faq-a {
+    font-size: 0.9rem;
+    color: rgba(245,243,238,0.5);
+    font-weight: 300;
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, margin-top 0.2s;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    margin-top: 1rem;
+  }
+
+  /* CTA */
+  #cta {
+    background: var(--accent);
+    padding: 6rem 4rem;
+  }
+
+  #cta h2 {
+    color: var(--black);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    max-width: 700px;
+    margin-bottom: 1rem;
+  }
+
+  #cta p {
+    color: rgba(10,10,9,0.6);
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 480px;
+  }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--black);
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-dark:hover { background: #1c1c1a; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 3rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  footer p {
+    font-size: 0.8rem;
+    color: rgba(245,243,238,0.3);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .fade-up-d1 { animation-delay: 0.1s; }
+  .fade-up-d2 { animation-delay: 0.2s; }
+  .fade-up-d3 { animation-delay: 0.35s; }
+  .fade-up-d4 { animation-delay: 0.5s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 1.5rem; }
+    h1 { font-size: 2.6rem; }
+    .problem-grid, .foryou-grid, .why-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .process-line { display: none; }
+    .metrics-row { grid-template-columns: repeat(2, 1fr); }
+    #cta { padding: 4rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero-stats { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero">Opti<span>scor</span></a>
+  <ul class="nav-links">
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a class="nav-cta" href="https://calendly.com/optiscor/30min" target="_blank">Book a Call</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding-left: 4rem; padding-right: 4rem;">
+  <div class="hero-bg">
+    <div class="hero-circle hero-circle-1"></div>
+    <div class="hero-circle hero-circle-2"></div>
+  </div>
+  <div class="container">
+    <div class="hero-tag fade-up fade-up-d1">Client Acquisition Systems</div>
+    <h1 class="fade-up fade-up-d2">
+      We Build Systems That<br>
+      <span class="highlight">Bring Clients to You</span><br>
+      Predictably.
+    </h1>
+    <p class="hero-sub fade-up fade-up-d3">No time wasting. No chasing leads. No guessing. Just a proven system that turns traffic into booked calls and sales, often within 60–90 days.</p>
+    <div class="hero-actions fade-up fade-up-d4">
+      <a class="btn-primary" href="https://calendly.com/optiscor/30min" target="_blank">Book a Free Strategy Call →</a>
+      <a class="btn-ghost" href="#solution">See how it works ↓</a>
+    </div>
+    <div class="hero-stats fade-up fade-up-d4">
+      <div class="stat-item">
+        <span class="stat-num">+30%</span>
+        <span class="stat-label">More booked calls</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">+90%</span>
+        <span class="stat-label">Better lead quality</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">+60%</span>
+        <span class="stat-label">Higher close rates</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">+60%</span>
+        <span class="stat-label">Predictable monthly revenue</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <p class="section-tag">The Real Problem</p>
+    <h2>Most businesses don't have<br>a traffic problem.</h2>
+    <p style="color: rgba(245,243,238,0.45); font-size: 1.05rem; font-weight: 300; margin-top: 0.5rem; max-width: 540px;">They have a system problem. You're already doing the work, but the results don't match the effort.</p>
+    <div class="problem-grid">
+      <div class="problem-col">
+        <h3>What you're doing</h3>
+        <ul class="check-list">
+          <li>Posting content regularly</li>
+          <li>Running paid ads</li>
+          <li>Answering DMs and emails</li>
+          <li>Jumping on discovery calls</li>
+        </ul>
+      </div>
+      <div class="problem-col" style="border-left: 1px solid rgba(255,255,255,0.05);">
+        <h3>What you're getting</h3>
+        <ul class="cross-list">
+          <li>Leads are inconsistent and unreliable</li>
+          <li>Sales depend on your mood and energy</li>
+          <li>Revenue goes up… then crashes</li>
+          <li>You're stuck doing everything yourself</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-tag">Our Solution</p>
+      <h2>A Predictable Client<br>Acquisition System</h2>
+      <p>We design and implement a complete growth system, from attracting qualified leads to converting them into paying clients. Every piece connects.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Offer Positioning</h3>
+        <p>We refine your offer so it's clear, specific, and easy to say yes to. No more confusing prospects.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏗</div>
+        <h3>Funnel Infrastructure</h3>
+        <p>Landing pages, VSLs, lead magnets, and booking systems, all built and optimized for conversion.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📣</div>
+        <h3>Traffic Strategy</h3>
+        <p>Organic, paid, or both. We choose what makes sense for your business and build around it.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h3>Sales System</h3>
+        <p>Scripts, follow-ups, and booking flows engineered so leads don't ghost and deals get closed.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Automation & Tracking</h3>
+        <p>CRM, WhatsApp, email, dashboards. Nothing breaks when you scale. Data drives every decision.</p>
+      </div>
+      <div class="service-card" style="background: rgba(200,245,66,0.04); border: none;">
+        <p style="font-size: 0.9rem; color: rgba(245,243,238,0.35); font-weight: 300; font-style: italic; line-height: 1.8;">We don't sell "marketing." We build the full machine. Every stage, every touchpoint, connected.</p>
+        <a class="btn-primary" href="https://calendly.com/optiscor/30min" target="_blank" style="margin-top: 1.5rem; font-size: 0.85rem; padding: 0.7rem 1.5rem;">Start here →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-tag">Why Clients Choose Us</p>
+      <h2>We don't sell "marketing."<br>We build systems.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>⚙️ Systems, not campaigns</h3>
+        <p>Every piece connects. We design the full machine, not isolated tactics that produce random results.</p>
+      </div>
+      <div class="why-card">
+        <h3>🎯 Real offers, not theory</h3>
+        <p>We need something worth selling. We sharpen your offer first, then build the system around it.</p>
+      </div>
+      <div class="why-card">
+        <h3>📈 Sales, not vanity metrics</h3>
+        <p>Followers don't pay bills. Revenue does. That's the only scoreboard we care about.</p>
+      </div>
+      <div class="why-card">
+        <h3>🌍 Proven across multiple markets</h3>
+        <p>Coaches, consultants, agencies. We've built acquisition systems across all of them.</p>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metric">
+        <div class="metric-num">+30%</div>
+        <div class="metric-label">More booked calls</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">+90%</div>
+        <div class="metric-label">Better lead quality</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">+60%</div>
+        <div class="metric-label">Higher close rates</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">+60%</div>
+        <div class="metric-label">Predictable monthly revenue</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-tag">How It Works</p>
+      <h2>Four steps to a fully<br>operational system.</h2>
+      <p>From zero to a client acquisition machine. Fast. No months of back and forth.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-line"></div>
+      <div class="process-step">
+        <div class="step-num-wrap"><span class="step-num">01</span></div>
+        <h3>Strategy Call</h3>
+        <p>We analyze your offer, market, and current situation to find exactly what's missing.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num-wrap"><span class="step-num">02</span></div>
+        <h3>System Design</h3>
+        <p>We map the full client acquisition machine, every stage, every touchpoint.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num-wrap"><span class="step-num">03</span></div>
+        <h3>Build & Launch</h3>
+        <p>We implement everything and launch fast. Execution over endless planning.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num-wrap"><span class="step-num">04</span></div>
+        <h3>Optimize & Scale</h3>
+        <p>We track, improve, and scale what works. Data drives every decision we make.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR YOU -->
+<section id="foryou">
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-tag">Is This for You?</p>
+      <h2>Let's be straight about<br>who we work with.</h2>
+    </div>
+    <div class="foryou-grid">
+      <div class="foryou-card yes">
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You already have an offer but struggle to get consistent clients</li>
+          <li>You're generating traffic but not converting it into sales</li>
+          <li>You want predictable growth instead of random wins</li>
+          <li>You're tired of relying on referrals or "posting and hoping"</li>
+        </ul>
+      </div>
+      <div class="foryou-card no">
+        <h3>This is not for you if</h3>
+        <ul>
+          <li>You want quick money with no work or commitment</li>
+          <li>You don't want systems or structure</li>
+          <li>You're not serious about building and scaling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-intro">
+      <p class="section-tag">Common Questions</p>
+      <h2>FAQs</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>How long does it take to see results?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">It depends on your offer, market, and traffic. Some clients start seeing traction within weeks. Others take longer depending on execution. Our focus isn't quick wins. It's building a system that produces consistent, predictable results over time.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Do you work with beginners?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">We work with people who are serious about building a real client acquisition system. You don't need a big audience, but you do need a solid offer and a willingness to execute.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Is this done-for-you or consulting?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">It's both. We design and build your client acquisition system, then guide you to ensure it actually performs and scales.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Do you guarantee results?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">We don't guarantee outcomes, we guarantee clarity, structure, and execution. Results depend on your offer, market, and follow-through. What we remove is guesswork.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>What happens on the strategy call?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">We analyze your current situation, identify what's holding your growth back, and map out what your client acquisition system should look like. If we're a fit, we'll walk you through the next steps. If not, you'll still leave with clarity.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="padding: 6rem 4rem;">
+  <div class="container">
+    <h2>Build a Predictable Flow<br>of Clients. Without Guesswork.</h2>
+    <p>Book your free strategy call now. We'll tell you exactly what's missing and whether we can help.</p>
+    <a class="btn-dark" href="https://calendly.com/optiscor/30min" target="_blank">Book the Free Call →</a>
+    <p style="margin-top: 1.5rem; font-size: 0.82rem; color: rgba(10,10,9,0.45);">You can keep posting, guessing, and hoping. Or you can install a system. Book the call. Decide with data.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="#hero">Opti<span>scor</span></a>
+  <p>© 2026 Optiscor. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .why-card, .process-step, .metric, .foryou-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
