@@ -870,7 +870,7 @@
       <div>
         <div class="hero-tag">Garage Door Companies Only</div>
         <h1>More Calls.<br>More Jobs.<br><span class="accent">Every Month.</span></h1>
-        <p class="hero-sub">We help garage door companies get emergency repair calls and booked jobs using Google Ads and high-converting landing pages.</p>
+        <p class="hero-sub">We help garage door companies get more emergency repair calls and booked jobs in 30 days using our proven client acquisition system.</p>
         <a class="btn-primary" href="#" onclick="openModal(); return false;">Get My Free Strategy Call →</a>
         <p class="hero-note">100% free. 30 minutes. You'll leave knowing exactly what's missing.</p>
       </div>
@@ -1128,47 +1128,68 @@
 
 <!-- BOOKING MODAL -->
 <div id="booking-modal" style="display:none; position:fixed; inset:0; z-index:999; align-items:center; justify-content:center; padding:1rem;">
-  <div class="modal-backdrop" onclick="closeModal()"></div>
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+  <div id="modal-backdrop" onclick="closeModal()" style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
+  <div style="position:relative; z-index:1; background:#12120f; border:1px solid rgba(200,245,66,0.15); border-radius:16px; width:100%; max-width:480px; max-height:90vh; overflow-y:auto; padding:2.5rem 2rem;">
+
+    <!-- Close -->
+    <button onclick="closeModal()" style="position:absolute; top:1rem; right:1rem; background:rgba(255,255,255,0.06); border:none; border-radius:50%; width:32px; height:32px; cursor:pointer; color:rgba(245,243,238,0.5); font-size:1.1rem; display:flex; align-items:center; justify-content:center; line-height:1;">✕</button>
+
+    <!-- Header -->
     <div style="margin-bottom:1.75rem;">
-      <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#c8f542; font-weight:500; margin-bottom:0.4rem;">Garage Door Marketing — Free Call</p>
-      <h3 style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:800; letter-spacing:-0.02em; color:#f5f3ee; line-height:1.2;">Book Your Strategy Call</h3>
-      <p style="font-size:0.85rem; color:rgba(245,243,238,0.4); margin-top:0.4rem; font-weight:300;">30 minutes. We'll show you exactly what's missing in your market.</p>
+      <p style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#c8f542; font-weight:500; margin-bottom:0.4rem;">Free Strategy Call</p>
+      <h3 style="font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:800; letter-spacing:-0.02em; color:#f5f3ee; line-height:1.2;">Book Your Discovery Call</h3>
+      <p style="font-size:0.85rem; color:rgba(245,243,238,0.4); margin-top:0.4rem; font-weight:300;">We'll analyze your market and map out exactly what's missing.</p>
     </div>
-    <form action="https://formsubmit.co/optiscor@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New Lead — Garage Door Landing Page">
+
+    <!-- Form -->
+    <form id="booking-form"
+          action="https://formsubmit.co/optiscor@gmail.com"
+          method="POST">
+
+      <!-- FormSubmit hidden config -->
+      <input type="hidden" name="_subject" value="New Discovery Call Lead - Garage Door">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://calendly.com/optiscor/30min">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="Source" value="Garage Door Landing Page">
 
-      <div class="form-grid" style="margin-bottom:0.75rem;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
         <div>
-          <label class="form-label">First Name</label>
-          <input class="form-input" name="First Name" type="text" placeholder="First Name" style="margin-bottom:0;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">First Name</label>
+          <input name="First Name" type="text" placeholder="First Name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
         </div>
         <div>
-          <label class="form-label">Last Name</label>
-          <input class="form-input" name="Last Name" type="text" placeholder="Last Name" style="margin-bottom:0;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Last Name</label>
+          <input name="Last Name" type="text" placeholder="Last Name" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
         </div>
       </div>
 
-      <label class="form-label">Phone / WhatsApp *</label>
-      <input class="form-input" name="Phone" type="tel" placeholder="+1 234 567 8900" required onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      <div style="margin-bottom:0.75rem;">
+        <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Phone / WhatsApp *</label>
+        <input name="Phone WhatsApp" type="tel" placeholder="+1 234 567 8900" required style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      </div>
 
-      <label class="form-label">Business Email *</label>
-      <input class="form-input" name="email" type="email" placeholder="you@yourbusiness.com" required onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      <div style="margin-bottom:0.75rem;">
+        <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Email *</label>
+        <input name="email" type="email" placeholder="you@example.com" required style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      </div>
 
-      <label class="form-label">Your City / Service Area</label>
-      <input class="form-input" name="City" type="text" placeholder="e.g. Dallas, TX" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      <div style="margin-bottom:0.75rem;">
+        <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Your City / Service Area</label>
+        <input name="City" type="text" placeholder="e.g. Dallas, TX" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      </div>
 
-      <label class="form-label">Biggest Challenge Right Now</label>
-      <textarea class="form-input" name="Biggest Challenge" rows="3" placeholder="Not enough calls? Slow season? Bad leads?..." style="resize:vertical;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+      <div style="margin-bottom:1.5rem;">
+        <label style="font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,243,238,0.45); display:block; margin-bottom:0.4rem;">Biggest Challenge Right Now</label>
+        <textarea name="Biggest Challenge" rows="3" placeholder="Not enough calls? Slow season? Bad leads?..." style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.75rem 1rem; color:#f5f3ee; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; resize:vertical; transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(200,245,66,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+      </div>
 
-      <button class="btn-submit" type="submit">Book My Free Strategy Call →</button>
-      <p style="text-align:center; font-size:0.75rem; color:rgba(245,243,238,0.2); margin-top:0.75rem;">100% free. No commitment. No pressure.</p>
+      <button type="submit" style="width:100%; background:#c8f542; color:#0a0a09; font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.95rem; padding:0.9rem 1.5rem; border:none; border-radius:8px; cursor:pointer; transition:background 0.2s; letter-spacing:0.01em;">
+        Book My Discovery Call →
+      </button>
+      <p style="text-align:center; font-size:0.75rem; color:rgba(245,243,238,0.25); margin-top:0.75rem;">100% free. No commitment.</p>
     </form>
+
   </div>
 </div>
 
