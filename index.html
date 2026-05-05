@@ -833,7 +833,8 @@
   /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
-    #hero, #problem, #how, #services, #proof, #forwhom, #cta, #faq { padding: 5rem 1.5rem; }
+    #hero { padding: 8rem 1.5rem 5rem; }
+    #problem, #how, #services, #proof, #forwhom, #cta, #faq { padding: 5rem 1.5rem; }
     .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
     .hero-pattern { display: none; }
     .problem-grid { grid-template-columns: 1fr; }
@@ -847,10 +848,24 @@
   }
 
   @media (max-width: 600px) {
-    #hero, #problem, #how, #services, #proof, #forwhom, #cta, #faq { padding: 4rem 1.25rem; }
+    #hero { padding: 8rem 1.25rem 4rem !important; }
+    #problem, #how, #services, #proof, #forwhom, #cta, #faq { padding: 4rem 1.25rem; }
 
-    h1 { font-size: 2.2rem !important; }
-    h2 { font-size: 1.65rem !important; }
+    /* Titles — clean, readable, not overwhelming */
+    h1 {
+      font-size: 2rem !important;
+      line-height: 1.1 !important;
+      letter-spacing: -0.02em !important;
+    }
+    h2 {
+      font-size: 1.45rem !important;
+      line-height: 1.2 !important;
+      letter-spacing: -0.01em !important;
+      font-weight: 700 !important;
+    }
+    h3 {
+      font-size: 1rem !important;
+    }
 
     /* Photos — stack vertically, wide aspect ratio */
     .photo-gallery {
@@ -877,6 +892,12 @@
 
     /* Forwhom list text size */
     .forwhom-list li { font-size: 0.88rem; }
+
+    /* Section tags smaller */
+    .section-tag { font-size: 0.68rem !important; }
+
+    /* Hero tag pill */
+    .hero-tag { font-size: 0.68rem !important; }
   }
 </style>
 </head>
