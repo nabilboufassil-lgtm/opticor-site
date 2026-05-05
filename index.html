@@ -834,70 +834,84 @@
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     #hero { padding: 8rem 1.5rem 5rem; }
-    #problem, #how, #services, #proof, #forwhom, #cta, #faq { padding: 5rem 1.5rem; }
+    #problem, #solution, #why, #process, #foryou, #faq, #cta { padding: 5rem 1.5rem; }
     .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
     .hero-pattern { display: none; }
     .problem-grid { grid-template-columns: 1fr; }
     .steps-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .steps-line { display: none; }
     .services-grid { grid-template-columns: 1fr; }
-    .proof-grid { grid-template-columns: 1fr; }
-    .forwhom-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .process-line { display: none; }
+    .metrics-row { grid-template-columns: 1fr 1fr; }
+    .foryou-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-    .nav-niche { display: none; }
+    .nav-links { display: none; }
   }
 
   @media (max-width: 600px) {
+    nav { padding: 1rem 1.25rem; }
     #hero { padding: 8rem 1.25rem 4rem !important; }
-    #problem, #how, #services, #proof, #forwhom, #cta, #faq { padding: 4rem 1.25rem; }
+    #problem, #solution, #why, #process, #foryou, #faq, #cta { padding: 4rem 1.25rem !important; }
 
-    /* Titles — clean, readable, not overwhelming */
+    /* Typography */
     h1 {
-      font-size: 2rem !important;
-      line-height: 1.1 !important;
+      font-size: 2.2rem !important;
+      line-height: 1.05 !important;
       letter-spacing: -0.02em !important;
     }
     h2 {
-      font-size: 1.45rem !important;
-      line-height: 1.2 !important;
+      font-size: 1.6rem !important;
+      line-height: 1.15 !important;
       letter-spacing: -0.01em !important;
-      font-weight: 700 !important;
     }
-    h3 {
-      font-size: 1rem !important;
-    }
+    h3 { font-size: 1rem !important; }
 
-    /* Photos — stack vertically, wide aspect ratio */
-    .photo-gallery {
-      grid-template-columns: 1fr !important;
-    }
-    .photo-gallery > div {
-      aspect-ratio: 16/9 !important;
-      border-radius: 10px !important;
-    }
+    /* Hero */
+    .hero-stats { gap: 1.5rem; }
+    .stat-num { font-size: 1.8rem !important; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .btn-primary { width: 100%; justify-content: center; }
+    .hero-tag { font-size: 0.65rem !important; }
 
-    /* Metrics — single column, no cutoff */
-    .metrics-grid {
-      grid-template-columns: 1fr !important;
-    }
+    /* Problem grid */
+    .problem-grid { grid-template-columns: 1fr !important; }
+    .problem-col { padding: 1.5rem !important; }
 
-    /* Steps — single column */
-    .steps-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+    /* Services */
+    .services-grid { grid-template-columns: 1fr !important; }
+    .service-card { padding: 1.5rem !important; }
 
-    /* Mini stats in hero card — 2 cols always */
-    .mini-stats { grid-template-columns: 1fr 1fr !important; }
+    /* Why us */
+    .why-grid { grid-template-columns: 1fr !important; }
+    .why-card { padding: 1.5rem !important; }
 
-    /* Hero card full width */
-    .hero-card { padding: 1.5rem !important; }
+    /* Metrics row — 2 columns on mobile */
+    .metrics-row { grid-template-columns: 1fr 1fr !important; }
+    .metric-num { font-size: 2rem !important; }
 
-    /* Forwhom list text size */
-    .forwhom-list li { font-size: 0.88rem; }
+    /* Process steps — single column */
+    .process-steps { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+    .process-step { padding: 0 !important; }
+    .process-line { display: none !important; }
 
-    /* Section tags smaller */
-    .section-tag { font-size: 0.68rem !important; }
+    /* For you cards */
+    .foryou-grid { grid-template-columns: 1fr !important; }
+    .foryou-card { padding: 1.5rem !important; }
 
-    /* Hero tag pill */
-    .hero-tag { font-size: 0.68rem !important; }
+    /* FAQ */
+    .faq-q { padding: 1.25rem 1.25rem !important; font-size: 0.9rem !important; }
+    .faq-item.open .faq-a { padding: 0 1.25rem 1.25rem !important; }
+
+    /* Section tag */
+    .section-tag { font-size: 0.65rem !important; }
+
+    /* Footer */
+    footer { padding: 2rem 1.25rem !important; }
+
+    /* Modal form grid */
+    .form-grid { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
